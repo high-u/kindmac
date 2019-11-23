@@ -1,5 +1,5 @@
 bases:
-- ../../monitoring/kubernetes-dashboard.yaml
+- ../../monitoring/kubernetes-dashboard/base
 - ../../monitoring/weave-scope/base
 - ../../applications/echo-server/base
 - ../../ingress-controller/kong-ingress-controller/base

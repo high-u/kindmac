@@ -3,4 +3,4 @@ bases:
 - ../../../applications/echo-server/overlays/local
 - ../../../ingress-controller/kong-ingress-controller/overlays/local
 - ../../../local/metallb/base
-- ../../../local/docker-registry/base
+# - ../../../local/docker-registry/base
