@@ -1,0 +1,6 @@
+bases:
+- ../../../monitoring/weave-scope/overlays/local
+- ../../../applications/echo-server/overlays/local
+- ../../../ingress-controller/kong-ingress-controller/overlays/local
+- ../../../local/metallb/base
+- ../../../local/docker-registry/base

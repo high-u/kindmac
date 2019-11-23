@@ -1,0 +1,3 @@
+resources:
+- echo-server.yaml
+- ingress.yaml

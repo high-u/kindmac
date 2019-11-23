@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: demo
+  namespace: default
+spec:
+  rules:
+  - host: echo.localhost
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: echo
+          servicePort: 80

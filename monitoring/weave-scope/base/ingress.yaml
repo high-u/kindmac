@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: weave
+  namespace: weave
+spec:
+  rules:
+  - host: scope.example.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: weave-scope
+          servicePort: 80

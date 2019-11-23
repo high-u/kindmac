@@ -1,0 +1,3 @@
+resources:
+- weave-scope.yaml
+- ingress.yaml
