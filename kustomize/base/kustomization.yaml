@@ -1,7 +1,6 @@
 bases:
+- ../../monitoring/kubernetes-dashboard.yaml
 - ../../monitoring/weave-scope/base
 - ../../applications/echo-server/base
 - ../../ingress-controller/kong-ingress-controller/base
 - ../../middleware/redis/base
-- ../../middleware/kafka-kubernetes/base
-- ../../monitoring/kafka-visualizer/base

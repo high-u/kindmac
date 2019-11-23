@@ -1,3 +1,28 @@
 = kindmac
 
 == Overview
+
+== Usage
+
+* `scope.k8s.local` , `registry.k8s.local` , `echo.k8s.local`
+** `cat /private/etc/hosts`
+** `echo "127.0.0.1 scope.k8s.local" | sudo tee -a /private/etc/hosts`
+** `echo "127.0.0.1 registry.k8s.local" | sudo tee -a /private/etc/hosts`
+** `echo "127.0.0.1 echo.k8s.local" | sudo tee -a /private/etc/hosts`
+* cleate cluster
+** `kind create cluster --name kind1 --config config.yaml && export KUBECONFIG="$(kind get kubeconfig-path --name="kind1")"`
+* deploy
+** `kubectl apply -k kustomize/overlays/local`
+* check
+** echo-server
+*** `curl -s echo.k8s.local:8080/ | grep -E "(pod|node) name:"`
+** weave-scope
+*** `open http://scope.k8s.local:8080`
+** kubernetes-dashboard
+*** `kubectl proxy`
+*** `open http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/`
+**** get token
+***** `kubectl get secret -n kube-system` , `deployment-controller-token-`
+***** `kubectl describe secret deployment-controller-token-vtddf -n kube-system`
+* delete cluster
+** `kind delete cluster --name kind1`

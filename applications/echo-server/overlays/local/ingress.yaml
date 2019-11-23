@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   rules:
-  - host: echo.localhost
+  - host: echo.k8s.local
     http:
       paths:
       - path: /

@@ -5,7 +5,7 @@ metadata:
   namespace: weave
 spec:
   rules:
-  - host: scope.localhost
+  - host: scope.k8s.local
     http:
       paths:
       - path: /
