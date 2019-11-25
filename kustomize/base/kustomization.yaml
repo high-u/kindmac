@@ -4,3 +4,4 @@ bases:
 - ../../applications/echo-server/base
 - ../../ingress-controller/kong-ingress-controller/base
 - ../../middleware/redis/base
+- ../../middleware/kafka/base

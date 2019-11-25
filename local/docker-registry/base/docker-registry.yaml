@@ -12,6 +12,8 @@ kind: Deployment
 metadata:
   name: docker-registry
   namespace: docker-registry
+  labels:
+    app: docker-registry
 spec:
   replicas: 1
   selector:
@@ -23,20 +25,18 @@ spec:
         app: docker-registry
     spec:
       containers:
-        - name: docker-registry
-          image: registry:2
-          env:
-            - name: REGISTRY_HTTP_ADDR
-              value: :5000
-            - name: REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY
-              value: /var/lib/registry
-          ports:
-          - name: docker-registry
-            containerPort: 5000
-            protocol: TCP
-          volumeMounts:
-          - name: image-store
-            mountPath: /var/lib/registry
+      - name: docker-registry
+        image: registry:2
+        env:
+        - name: REGISTRY_HTTP_ADDR
+          value: :5000
+        - name: REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY
+          value: /var/lib/registry
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+        - name: image-store
+          mountPath: /var/lib/registry
       volumes:
         - name: image-store
           emptyDir: {}

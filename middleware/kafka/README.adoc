@@ -1,0 +1,36 @@
+= Kafka
+
+== helm template
+
+* https://github.com/helm/charts/tree/master/incubator/kafka[helm/charts/incubator/kafka]
+** https://guide.opencord.org/charts/kafka.html[Kafka Helm chart]
+
+[source, bash]
+----
+# helm init --client-only
+helm repo add incubator http://storage.googleapis.com/kubernetes-charts-incubator
+# helm repo update
+helm fetch incubator/kafka
+helm template kafka-0.20.5.tgz > base/kafka.yaml
+helm template kafka-0.20.5.tgz --set replicas=1 > overlays/local/kafka.yaml
+kubectl apply -f kafka.yaml
+----
+
+* confluent version
+** 
+
+[source, bash]
+----
+# helm repo add confluentinc https://confluentinc.github.io/cp-helm-charts/
+# helm repo update
+# helm install --name cp-kafka confluentinc/cp-helm-charts
+----
+
+== environment
+
+* Docker for Mac
+** Advanced
+*** Limit the resources available to Docker Engine.
+**** CPUs: 4
+**** Memory: 8.0 GiB
+* kind
