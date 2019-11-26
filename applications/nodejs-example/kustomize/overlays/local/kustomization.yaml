@@ -1,4 +1,6 @@
 bases:
 - ../../base
+resources:
+- ingress.yaml
 patchesStrategicMerge:
 - nodejs-example.yaml

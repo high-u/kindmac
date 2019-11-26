@@ -7,3 +7,10 @@ metadata:
 spec:
   replicas: 1
   template:
+    spec:
+      containers:
+      - image: nodejs-example:local
+        name: nodejs-example
+        ports:
+        - containerPort: 3000
+        imagePullPolicy: Never
