@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: nodejs-example
+  name: nodejs-example
+spec:
+  ports:
+  - port: 80
+    name: nodejs-example
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: nodejs-example
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: nodejs-example
+  name: nodejs-example
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nodejs-example
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nodejs-example
+    spec:
+      containers:
+      - image: xxx.io/kubernetes-app-images/nodeexampleapp:1.0
+        name: nodejs-example
+        ports:
+        - containerPort: 3000

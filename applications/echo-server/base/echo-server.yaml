@@ -24,7 +24,7 @@ metadata:
     app: echo
   name: echo
 spec:
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
       app: echo

@@ -33,6 +33,6 @@
 **** `kubectl get secret -n kube-system` , `deployment-controller-token-`
 **** `kubectl describe secret deployment-controller-token-vtddf -n kube-system`
 
-== Delete cluster
+=== Delete cluster
 
 * `kind delete cluster --name kind1`

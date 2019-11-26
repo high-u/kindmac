@@ -1,0 +1,15 @@
+= nodejs-example application
+
+== Operation
+
+[source, bash]
+----
+npm install
+node app
+----
+
+[source, bash]
+----
+docker build -t nodeexampleapp .
+docker run -it nodeexampleapp
+----

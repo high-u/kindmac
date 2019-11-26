@@ -17,7 +17,6 @@ kubectl apply -f kafka.yaml
 ----
 
 * confluent version
-** 
 
 [source, bash]
 ----

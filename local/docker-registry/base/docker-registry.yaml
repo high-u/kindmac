@@ -1,5 +1,3 @@
-# https://kubernetes.github.io/ingress-nginx/examples/docker-registry/
-# https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/docs/examples/docker-registry/deployment.yaml
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -12,8 +10,6 @@ kind: Deployment
 metadata:
   name: docker-registry
   namespace: docker-registry
-  labels:
-    app: docker-registry
 spec:
   replicas: 1
   selector:
@@ -25,21 +21,22 @@ spec:
         app: docker-registry
     spec:
       containers:
-      - name: docker-registry
-        image: registry:2
-        env:
-        - name: REGISTRY_HTTP_ADDR
-          value: :5000
-        - name: REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY
-          value: /var/lib/registry
-        ports:
-        - containerPort: 5000
-        volumeMounts:
-        - name: image-store
-          mountPath: /var/lib/registry
+        - name: docker-registry
+          image: registry:2.6.2
+          env:
+            - name: REGISTRY_HTTP_ADDR
+              value: ":5000"
+            - name: REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY
+              value: "/var/lib/registry"
+          ports:
+          - name: http
+            containerPort: 5000
+          volumeMounts:
+          - name: image-store
+            mountPath: "/var/lib/registry"
       volumes:
         - name: image-store
-          emptyDir: {}
+          emptyDir:
 
 ---
 
@@ -50,13 +47,10 @@ metadata:
   namespace: docker-registry
   labels:
     app: docker-registry
-#    name: docker-registry
 spec:
   selector:
     app: docker-registry
-#    name: docker-registry
   ports:
-  - name: app
+  - name: http
     port: 5000
-    protocol: TCP
     targetPort: 5000
