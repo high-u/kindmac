@@ -4,4 +4,3 @@ bases:
 - ../../../ingress-controller/kong-ingress-controller/overlays/local
 - ../../../middleware/kafka/overlays/local
 - ../../../local/metallb/base
-- ../../../local/docker-registry/base
