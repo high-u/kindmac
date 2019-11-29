@@ -3,9 +3,10 @@ bases:
 - ../../../ingress-controller/kong-ingress-controller/overlays/local
 - ../../../monitoring/weave-scope/overlays/local
 - ../../../monitoring/kubernetes-dashboard/base
-- ../../../applications/echo-server/overlays/local
+- ../../../monitoring/kafka/base
 - ../../../middleware/kafka/overlays/local
 - ../../../middleware/redis/base
+- ../../../applications/echo-server/overlays/local
 - ../../../applications/nodejs-example/kustomize/overlays/local
 
 # - ../../monitoring/kubernetes-dashboard/base

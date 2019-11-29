@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kafka-visuals-deployment
+  namespace: kafka
+  labels:
+    app: kafka-visuals
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kafka-visuals
+  template:
+    metadata:
+      labels:
+        app: kafka-visuals
+    spec:
+      containers:
+        - name: kafka-visuals
+          image: kbhargava/kafka-visuals
+          ports:
+            - containerPort: 8080
+          args:
+            - "release-name-zookeeper.kafka.svc.cluster.local:2181"
+            - "release-name-kafka.kafka.svc.cluster.local:9092"
+            - "DEV"

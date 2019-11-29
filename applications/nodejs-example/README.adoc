@@ -17,6 +17,7 @@ docker run -it -p 3000:3000 nodejs-example:local
 [source, bash]
 ----
 kind load docker-image nodejs-example:local --name kind1
-kubectl apply -k kustomize/overlays/local/
+kubectl apply -k applications/nodejs-example/kustomize/overlays/local/
+# delete pod
 curl nodejs-example.k8s.local:8080
 ----
