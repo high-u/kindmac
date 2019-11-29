@@ -1,6 +1,0 @@
-bases:
-- ../../../monitoring/weave-scope/overlays/local
-- ../../../applications/echo-server/overlays/local
-- ../../../ingress-controller/kong-ingress-controller/overlays/local
-- ../../../middleware/kafka/overlays/local
-- ../../../local/metallb/base

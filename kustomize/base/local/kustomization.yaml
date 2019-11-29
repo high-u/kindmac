@@ -1,0 +1,16 @@
+bases:
+- ../../../local/metallb/base
+- ../../../ingress-controller/kong-ingress-controller/overlays/local
+- ../../../monitoring/weave-scope/overlays/local
+- ../../../monitoring/kubernetes-dashboard/base
+- ../../../applications/echo-server/overlays/local
+- ../../../middleware/kafka/overlays/local
+- ../../../middleware/redis/base
+- ../../../applications/nodejs-example/kustomize/overlays/local
+
+# - ../../monitoring/kubernetes-dashboard/base
+# - ../../monitoring/weave-scope/base
+# - ../../applications/echo-server/base
+# - ../../ingress-controller/kong-ingress-controller/base
+# - ../../middleware/redis/base
+# - ../../middleware/kafka/base

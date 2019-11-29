@@ -18,7 +18,7 @@
 
 === Deploy
 
-* `kubectl apply -k kustomize/overlays/local`
+* `kubectl apply -k kustomize/base/local`
 
 === Check
 
