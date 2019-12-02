@@ -7,6 +7,5 @@ spec:
   template:
     spec:
       containers:
-      - image: highu/dockerhub-nodejs-example
-        name: nodejs-example
-
+      - image: nodejs-example:local
+        imagePullPolicy: Never

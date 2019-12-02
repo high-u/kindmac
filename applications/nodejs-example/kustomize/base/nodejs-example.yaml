@@ -32,7 +32,7 @@ spec:
         app: nodejs-example
     spec:
       containers:
-      - image: xxx.io/kubernetes-app-images/nodeexampleapp:1.0
+      - image: docker.io/highu/dockerhub-nodejs-example
         name: nodejs-example
         ports:
         - containerPort: 3000

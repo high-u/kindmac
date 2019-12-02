@@ -1,7 +1,7 @@
 bases:
-- ../../monitoring/kubernetes-dashboard/base
-- ../../monitoring/weave-scope/base
-- ../../applications/echo-server/base
-- ../../ingress-controller/kong-ingress-controller/base
-- ../../middleware/redis/base
-- ../../middleware/kafka/base
+- ../../monitoring/kubernetes-dashboard/kustomize/base
+- ../../monitoring/weave-scope/kustomize/base
+- ../../applications/echo-server/kustomize/base
+- ../../ingress-controller/kong-ingress-controller/kustomize/base
+- ../../middleware/redis/kustomize/base
+- ../../middleware/kafka/kustomize/base

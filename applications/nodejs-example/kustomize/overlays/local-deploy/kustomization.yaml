@@ -1,0 +1,4 @@
+bases:
+- ../local
+patchesStrategicMerge:
+- nodejs-example.yaml

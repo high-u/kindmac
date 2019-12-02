@@ -1,0 +1,12 @@
+= Kafka Manager
+
+== helm template
+
+* https://github.com/helm/charts/tree/master/stable/kafka-manager
+
+[source, bash]
+----
+cd helm
+helm fetch stable/kafka-manager
+helm template --name dev kafka-manager-2.2.0.tgz --set zkHosts=dev-zookeeper:2181, > ../kustomize/base/kafka-manager.yaml
+----

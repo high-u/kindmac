@@ -10,5 +10,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: weave-scope
+          serviceName: weave-scope-app
           servicePort: 80

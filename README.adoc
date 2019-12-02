@@ -30,8 +30,11 @@
 ** `kubectl proxy`
 ** `open http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/`
 *** get token
-**** `kubectl get secret -n kube-system` , `deployment-controller-token-`
-**** `kubectl describe secret deployment-controller-token-vtddf -n kube-system`
+**** `kubectl describe secret deployment-controller-token-xxxxx -n kube-system`
+* kafka
+** `kubectl exec -it release-name-kafka-0 -n kafka bash`
+*** `kafka-topics --zookeeper release-name-zookeeper.kafka.svc.cluster.local:2181 --create --replication-factor 1 --partitions 1 --topic sample1`
+*** `kafka-topics --zookeeper release-name-zookeeper.kafka.svc.cluster.local:2181 --list sample1`
 
 === Local development
 

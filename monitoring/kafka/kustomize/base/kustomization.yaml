@@ -1,0 +1,4 @@
+namespace: kafka
+resources:
+# - kafka-visualizer.yaml
+- kafka-manager.yaml

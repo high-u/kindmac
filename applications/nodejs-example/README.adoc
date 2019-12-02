@@ -1,6 +1,6 @@
 = nodejs-example application
 
-== Operation
+== Install and Execute
 
 [source, bash]
 ----
@@ -8,16 +8,19 @@ npm install
 node app
 ----
 
+== Build Docker image
+
 [source, bash]
 ----
 docker build -t nodejs-example:local .
 docker run -it -p 3000:3000 nodejs-example:local
 ----
 
+== Test
+
 [source, bash]
 ----
 kind load docker-image nodejs-example:local --name kind1
 kubectl apply -k applications/nodejs-example/kustomize/overlays/local/
-# delete pod
-curl nodejs-example.k8s.local:8080
+kubectl delete po nodejs-example-xxxxxxxxxx-xxxxx
 ----
