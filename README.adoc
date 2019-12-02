@@ -6,10 +6,8 @@
 
 === Insert domain to hosts file
 
-* `scope.k8s.local` , `nodejs-example.k8s.local` , `echo.k8s.local`
-** `cat /private/etc/hosts`
-** `echo "127.0.0.1 scope.k8s.local" | sudo tee -a /private/etc/hosts`
-** `echo "127.0.0.1 nodejs-example.k8s.local" | sudo tee -a /private/etc/hosts`
+* `echo "127.0.0.1 scope.k8s.local" | sudo tee -a /private/etc/hosts`
+* `echo "127.0.0.1 nodejs-example.k8s.local" | sudo tee -a /private/etc/hosts`
 
 === Cleate cluster
 
@@ -21,22 +19,31 @@
 
 === Check
 
-* echo-server
-** `curl -s localhost:3080/ | head -n 10`
-* weave-scope
-** `open http://scope.k8s.local:3080`
-* kubernetes-dashboard
-** `kubectl proxy`
-** `open http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/`
-*** get token
-**** `kubectl describe secret deployment-controller-token-xxxxx -n kube-system`
-* kafka
-** `kubectl exec -it release-name-kafka-0 -n kafka bash`
-*** `kafka-topics --zookeeper release-name-zookeeper.kafka.svc.cluster.local:2181 --create --replication-factor 1 --partitions 1 --topic sample1`
-*** `kafka-topics --zookeeper release-name-zookeeper.kafka.svc.cluster.local:2181 --list sample1`
-* nodejs example application
-** `curl nodejs-example.k8s.local:3080`
-** Returns "200"
+==== echo-server
+
+* `curl -s localhost:3080/ | head -n 10`
+
+==== weave-scope
+
+* `open http://scope.k8s.local:3080`
+
+==== kubernetes-dashboard
+
+* `kubectl proxy`
+* `open http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/`
+** get token
+*** `kubectl describe secret deployment-controller-token-xxxxx -n kube-system`
+
+==== kafka
+
+* `kubectl exec -it release-name-kafka-0 -n kafka bash`
+** `kafka-topics --zookeeper release-name-zookeeper.kafka.svc.cluster.local:2181 --create --replication-factor 1 --partitions 1 --topic sample1`
+** `kafka-topics --zookeeper release-name-zookeeper.kafka.svc.cluster.local:2181 --list sample1`
+
+==== nodejs example application
+
+* `curl nodejs-example.k8s.local:3080`
+* Returns "200"
 
 === Local development
 
