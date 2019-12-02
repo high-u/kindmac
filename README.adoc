@@ -10,7 +10,6 @@
 ** `cat /private/etc/hosts`
 ** `echo "127.0.0.1 scope.k8s.local" | sudo tee -a /private/etc/hosts`
 ** `echo "127.0.0.1 nodejs-example.k8s.local" | sudo tee -a /private/etc/hosts`
-** `echo "127.0.0.1 echo.k8s.local" | sudo tee -a /private/etc/hosts`
 
 === Cleate cluster
 
@@ -23,7 +22,7 @@
 === Check
 
 * echo-server
-** `curl -s echo.k8s.local:8080/ | grep -E "(pod|node) name:"`
+** `curl -s localhost:8080/ | head -n 10`
 * weave-scope
 ** `open http://scope.k8s.local:8080`
 * kubernetes-dashboard

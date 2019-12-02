@@ -22,5 +22,5 @@ docker run -it -p 3000:3000 nodejs-example:local
 ----
 kind load docker-image nodejs-example:local --name kind1
 kubectl apply -k applications/nodejs-example/kustomize/overlays/local/
-kubectl delete po nodejs-example-xxxxxxxxxx-xxxxx
+kubectl delete po --selector="app=nodejs-example"
 ----

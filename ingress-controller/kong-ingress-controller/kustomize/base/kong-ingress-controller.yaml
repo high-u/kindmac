@@ -481,14 +481,14 @@ spec:
     app: ingress-kong
 ---
 apiVersion: apps/v1
-kind: Deployment # Switched from "Deployment" to "DaemonSet" and commented out "replicas".
+kind: Deployment
 metadata:
   labels:
     app: ingress-kong
   name: ingress-kong
   namespace: kong
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: ingress-kong
