@@ -5,18 +5,18 @@ nodes:
 - role: worker
   extraPortMappings:
   - containerPort: 30080
-    hostPort: 8080
+    hostPort: 3080
     listenAddress: "0.0.0.0"
     protocol: tcp
 - role: worker
   extraPortMappings:
   - containerPort: 30080
-    hostPort: 8081
+    hostPort: 3081
     listenAddress: "0.0.0.0"
     protocol: tcp
 - role: worker
   extraPortMappings:
   - containerPort: 30080
-    hostPort: 8082
+    hostPort: 3082
     listenAddress: "0.0.0.0"
     protocol: tcp

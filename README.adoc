@@ -22,9 +22,9 @@
 === Check
 
 * echo-server
-** `curl -s localhost:8080/ | head -n 10`
+** `curl -s localhost:3080/ | head -n 10`
 * weave-scope
-** `open http://scope.k8s.local:8080`
+** `open http://scope.k8s.local:3080`
 * kubernetes-dashboard
 ** `kubectl proxy`
 ** `open http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/`
@@ -34,6 +34,9 @@
 ** `kubectl exec -it release-name-kafka-0 -n kafka bash`
 *** `kafka-topics --zookeeper release-name-zookeeper.kafka.svc.cluster.local:2181 --create --replication-factor 1 --partitions 1 --topic sample1`
 *** `kafka-topics --zookeeper release-name-zookeeper.kafka.svc.cluster.local:2181 --list sample1`
+* nodejs example application
+** `curl nodejs-example.k8s.local:3080`
+** Returns "200"
 
 === Local development
 
